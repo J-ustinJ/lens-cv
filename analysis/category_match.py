@@ -1,32 +1,20 @@
 from typing import Dict, List
-
 from sklearn.metrics.pairwise import cosine_similarity
-
 from data.keywords import CATEGORY_MAP
 from utils.text_utils import normalize_text, keyword_exists, split_jd_sections, find_keywords_in_text
 from utils.model import model
 
-
 def semantic_skill_exists(resume_embedding, skill: str, threshold: float = 0.45):
     skill_embedding = model.encode([skill])[0]
-
-    similarity = cosine_similarity(
-        [resume_embedding],
-        [skill_embedding]
-    )[0][0]
-
-    return similarity >= threshold
-
+    similarity = cosine_similarity([resume_embedding],[skill_embedding])[0][0]
+    return similarity>=threshold
 
 def extract_category_keywords_from_jd(jd_text: str) -> Dict[str, List[str]]:
     required = {}
-
     for category, keyword_list in CATEGORY_MAP.items():
-        found = find_keywords_in_text(jd_text, keyword_list)
-
+        found=find_keywords_in_text(jd_text, keyword_list)
         if found:
             required[category] = found
-
     return required
 
 
@@ -41,14 +29,6 @@ def extract_preferred_keywords(jd_text: str):
 
 
 def calculate_category_scores(resume_text: str, jd_text: str) -> Dict[str, Dict]:
-    """
-    Returns, for every category that the JD actually requires:
-    {
-        "Tech Skills": {"score": 80.0, "matched": [...], "missing": [...]},
-        ...
-    }
-    Categories with zero JD keywords are skipped entirely (never penalized).
-    """
     resume_text = normalize_text(resume_text)
     jd_text = normalize_text(jd_text)
     required_text, preferred_text = split_jd_sections(jd_text)

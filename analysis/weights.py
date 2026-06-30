@@ -9,10 +9,8 @@ def get_active_weights(category_scores: Dict[str, Dict], application_type: str) 
 
     # Only categories that are both in the profile AND actually required by the JD
     active_categories = [cat for cat in base_weights if cat in category_scores]
-
     if not active_categories:
         return {}
-
     raw_total = sum(base_weights[cat] for cat in active_categories)
     if raw_total == 0:
         # Fallback: equal split if something odd happens
@@ -20,10 +18,7 @@ def get_active_weights(category_scores: Dict[str, Dict], application_type: str) 
         return {cat: round(equal_share * 100, 1) for cat in active_categories}
 
     # Redistribute proportionally so active weights sum to 100%
-    active_weights = {
-        cat: round((base_weights[cat] / raw_total) * 100, 1)
-        for cat in active_categories
-    }
+    active_weights={cat: round((base_weights[cat] / raw_total) * 100, 1) for cat in active_categories}
     return active_weights
 
 
