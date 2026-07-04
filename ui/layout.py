@@ -30,10 +30,9 @@ def render_header(logo_path: str = r"C:\Users\Justin\Downloads\logox.png"):
 def render_sidebar() -> str:
     with st.sidebar:
         st.header("⚙️ Settings")
-        groq_api_key = st.text_input("Groq API Key", type="password",
-                                      help="Get one free at console.groq.com")
-        st.caption("Your key is only used for this session, never stored.")
-    return groq_api_key
+        st.success("✅ AI features are enabled")
+        st.caption("Powered by Groq")
+    return st.secrets["GROQ_API_KEY"]
 
 
 def render_inputs():
