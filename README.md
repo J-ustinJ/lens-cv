@@ -1,4 +1,4 @@
-# Resume Analyzer V4
+# Resume Analyzer
 
 A multi-dimensional, recruiter-style resume evaluation engine built with Streamlit, Sentence Transformers, and Groq LLaMA 3.3 70B.
 
@@ -140,18 +140,6 @@ Each hiring context has a base weight profile across the 7 categories. If the JD
 - Keyword matching is case-insensitive exact string match — synonyms not in the keyword dictionaries won't be caught by the ATS score (though semantic score partially covers this).
 - Groq free tier has rate limits — if you hit them, wait a minute and retry.
 - The model (`all-MiniLM-L6-v2`) downloads ~80MB on first run, then is cached locally.
-
----
-
-## Version History
-
-| Version | Key Addition |
-|---|---|
-| V1 | PDF parsing, exact keyword ATS score, structure check |
-| V2 | Sentence Transformers, cosine similarity, semantic score, skill gap ranking |
-| V3 | Groq LLM — AI feedback, interview questions, learning roadmap |
-| V4 | Category scoring engine, hiring context weights, dynamic redistribution, radar chart, recruiter simulation |
-
 ---
 
 ## License
