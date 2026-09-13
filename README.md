@@ -4,7 +4,7 @@ A multi-dimensional, recruiter-style resume evaluation engine built with Streaml
 
 ---
 ## Live Demo
-Try Demo now : [lens-cv-kgrlgfdcrpnwi6xfhv7y4z](https://lens-cv.streamlit.app/)
+Try Demo now : [LensCV](https://lens-cv.streamlit.app/)
 ## Features
 
 ### Scoring System
