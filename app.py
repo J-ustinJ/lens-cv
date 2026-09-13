@@ -20,8 +20,8 @@ from ui.score_cards import circular_score
 
 # Page Config
 st.set_page_config(
-    page_title="Resume Analyzer V4",
-    page_icon="📄",
+    page_title="LensCV",
+    page_icon="🔍",
     layout="wide"
 )
 inject_global_styles()
