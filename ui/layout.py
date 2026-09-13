@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def render_header(logo_path: str = r"C:\Users\Justin\Downloads\logox.png"):
+def render_header(logo_path: str = r"logox.png"):
     col1, col2, col3 = st.columns([1, 8, 3])
 
     with col1:
