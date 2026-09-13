@@ -5,7 +5,7 @@ def render_header(logo_path: str = r"logox.png"):
     col1, col2, col3 = st.columns([1, 8, 3])
 
     with col1:
-        logo_path=Path(__file__).parent/"x.png"
+        logo_path=Path(__file__).parent/"logox.png"
         st.image(logo_path, width=110)
     with col2:
         st.title("LensCV")
