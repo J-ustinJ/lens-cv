@@ -3,7 +3,8 @@
 A multi-dimensional, recruiter-style resume evaluation engine built with Streamlit, Sentence Transformers, and Groq LLaMA 3.3 70B.
 
 ---
-
+## Live Demo
+Try Demo now : [lens-cv-kgrlgfdcrpnwi6xfhv7y4z](https://lens-cv.streamlit.app/)
 ## Features
 
 ### Scoring System
